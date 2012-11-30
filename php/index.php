@@ -1,10 +1,10 @@
 <?php
 require_once __DIR__.'/platform/Bootstrap.php';
 
-use Workshop\Person;
+use School\Student;
 
 
-$marko = new Person(array(
+$marko = new Student(array(
 	'firstName' => 'Tester',
 	'lastName' => 'Bester',
 	'birthdate' => '1980-1-1'
@@ -32,7 +32,7 @@ function generateRandomPerson() {
 	$randomSecond = rand($start->getTimestamp(), $end->getTimestamp());
 	$randomDate = $randomDate->setTimestamp($randomSecond);
 
-	return new Person(array(
+	return new Student(array(
 		"firstName" => randomWord(),
 		'lastName' => randomWord(),
 		"birthdate" => $randomDate
@@ -57,17 +57,17 @@ $proxy = new StandardProxy();
 
 
 
-$allPersons = Person::findAll();
+$allPersons = Student::findAll();
 
 /*
 foreach($allPersons as $person) {
 	echo 'Ja sam ', $person->name, ' i rođen sam ', $person->birthdate, "<br />";
 }
 */
-foreach (Person::getShortPeople (10) as $person)
+foreach (Student::getShortPeople (10) as $person)
 	echo $person->name, "<br />";
 
-use Workshop\Demographic;
+use School\Demographic;
 $demo = new Demographic();
 $content = $demo->createPdf();
 
