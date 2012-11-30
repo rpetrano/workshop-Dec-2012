@@ -1,0 +1,5 @@
+    RewriteEngine on
+    RewriteBase /
+
+    RewriteRule .* app.php [L]
+
