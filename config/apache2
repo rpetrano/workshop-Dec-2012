@@ -1,17 +1,16 @@
 Listen 11000
 
 <VirtualHost localhost:11000>
-  ServerName dec2012.workshop
-  ServerAlias *.dec2012.workshop
+  ServerName localhost
+  ServerAlias localhost
   ServerAdmin admin@element.hr
 
-  DocumentRoot D:/Code/workshop-Dec-2012/php
+  DocumentRoot /home/robi/projects/crud/php/web
   
-  <Directory D:/Code/workshop-Dec-2012/php>
-    # IGNORE .htaccess
+  <Directory /home/robi/projects/crud/php/web>
     AllowOverride All
   </Directory>
 
-  ErrorLog D:/Code/workshop-Dec-2012/logs/apache2/error.log
-  CustomLog D:/Code/workshop-Dec-2012/logs/apache2/access.log combined
+  ErrorLog /home/robi/projects/workshop-Dec-2012/logs/apache2/error.log
+  CustomLog /home/robi/projects/workshop-Dec-2012/logs/apache2/access.log combined
 </VirtualHost>
