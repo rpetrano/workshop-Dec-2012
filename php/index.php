@@ -72,8 +72,3 @@ $demo = new Demographic();
 $content = $demo->createPdf();
 
 file_put_contents("minors.pdf", $content);
-
-?>
-
-</body>
-</html>
